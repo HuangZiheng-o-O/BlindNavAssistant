@@ -1,0 +1,29 @@
+<!-- 蒙版效果 -->
+<view class="mask" hidden="{{isHidden}}" catchtap="closeMask">
+    <view class="masks" catchtap="prevent" animation="{{ani}}">
+        <view class="box">
+            <image class="leftImage" mode="widthFix" src="http://img2.3png.com/1a8fb81736d864022d1e10b1430cada728a3.png"></image>
+            <view class="right">
+                <view class="title">
+                    <text class="name">点击拨号</text>
+                </view>
+                <view class="info">
+                    <view class="field">关联盲人</view>
+                    <input placeholder="输入盲人Id" catchtap="emptyMethod" bindinput="bindIdInput"></input>
+                    <view class="field">关联盲人电话</view>
+                    <view class="value" display: flex flex-direction: row>
+                      <input placeholder="输入号码" catchtap="emptyMethod" bindinput="bindNumInput"></input>
+                      <view class="cu-capsule radius">
+                        <view class="cu-tag bg-blue">
+                          +86
+                        </view>
+                        <view class="cu-tag line-blue">
+                          中国大陆
+                        </view>
+                      </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

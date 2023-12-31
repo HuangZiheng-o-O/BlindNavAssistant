@@ -1,0 +1,62 @@
+<!--miniprogram/pages/journal/journal.wxml-->
+<scroll-view scroll-y class="DrawerPage" scroll-with-animation="true" style="background-color: {{skin?'#030852':'#ffffff'}};">
+
+  <cu-custom bgColor="bg-lightGrey" isBack="{{false}}" isCustom="{{true}}" isNav="{{false}}">
+    <view slot="backText">返回</view>
+    <view slot="content" class="text-shadow-meows">
+      <!-- <text class="text-white text-bold">导路明光项目组</text> -->
+    </view>
+  </cu-custom>
+
+  <view class="cu-bar bg-white align-center margin-top">
+    <view class="action border-title">
+      <text class="text-xl text-bold text-blue">导路明光--家属互励板</text>
+      <text class="bg-gradual-blue"></text>
+    </view>
+  </view>
+
+  <view class="cu-timeline">
+
+    <view class="cu-item text-blue cuIcon-favorfill">
+      <view class="cu-time">2022.06.10</view>
+      <view class="bg-blue content shadow-blur">
+        <wh-typeWriter whContent="如果上帝忘了掀开你的帘,还有亲友愿作你的眼。  --by萧煌奇"></wh-typeWriter>
+        <text decode="{{true}}" space="{{true}}">&nbsp;</text>
+      </view>
+      <view class="cu-item cur cuIcon-noticefill">
+        <view class="content bg-green shadow-blur">
+          <text>罗曼罗兰</text> 心中有阳光，人生便有了诗与远方。
+        </view>
+      </view>
+      <view class="cu-item text-red cuIcon-attentionforbidfill">
+        <view class="content bg-red shadow-blur">
+          <text>爱默生</text> 美存内心，无从它觅！
+        </view>
+      </view>
+      <view class="bg-orange content shadow-blur">
+        <wh-typeWriter whContent="面对阳光,阴影便在我们身后。 --by海伦凯勒"></wh-typeWriter>
+        <text decode="{{true}}" space="{{true}}">&nbsp;</text>
+      </view>
+      <view class="bg-purple content shadow-blur">
+        <wh-typeWriter whContent="心有明光，必有诗与远方；心中有暖，何惧人生苍凉。--by导路明光项目组"></wh-typeWriter>
+        <text decode="{{true}}" space="{{true}}">&nbsp;</text>
+      </view>
+    </view>
+
+    <view wx:for="{{jourContent}}" wx:key="key" wx:for-item="jourContent" wx:for-index="index">
+      <view wx:if="{{jourContent.hasTime}}" class="cu-time">{{jourContent.createTime}}</view>
+
+      <view class="cu-item {{jourContent.textColor}}">
+        <view class="{{jourContent.bgColor}} content shadow-blur">
+          {{jourContent.sourceContent}}
+        </view>
+      </view>
+    </view>
+
+  </view>
+
+  <view class="text-xs flex justify-center" style="margin-bottom: 20rpx; width: 100%; text-align: center;">
+    <view class="text-grey" style="margin-right:4rpx;">Powered by</view>
+    <view class="text-lightBlue">导路明光项目组</view>
+  </view>
+</scroll-view>
